@@ -18,10 +18,16 @@
                     src="ar/ar_location/asset.png"
                     look-at="[gps-camera]"
                     scale="1 1 1"
-                    gps-entity-place="latitude: 22.285289; longitude: 114.148149;"
+                    gps-entity-place="latitude: 41.890890; longitude: 12.489357;"
                 ></a-image>
+                <a-text
+                  value="This content will always face you."
+                  look-at="[gps-camera]"
+                  scale="50 50 50"
+                  gps-entity-place="latitude: 41.890890; longitude: 12.489357;"
+                ></a-text>
 
-            <a-camera gps-camera rotation-reader></a-camera>
+            <a-camera gps-camera="simulateLatitude: 41.890890; simulateLongitude: 12.489357;" rotation-reader></a-camera>
         </a-scene>
     </body>
 </html>
