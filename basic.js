@@ -20,9 +20,13 @@ window.onload = () => {
             });
             document.querySelector("a-scene").appendChild(entity1);
 
-            // Add a green sphere to the south of the initial GPS position
-            const entity2 = document.createElement("a-sphere");
-            entity2.setAttribute("radius", 10);
+            // Add a green box to the south of the initial GPS position
+            const entity2 = document.createElement("a-box");
+            entity2.setAttribute("scale", {
+                x: 20, 
+                y: 20,
+                z: 20
+            });
             entity2.setAttribute('material', { color: 'green' } );
             entity2.setAttribute('gps-new-entity-place', {
                 latitude: e.detail.position.latitude - 0.001,
@@ -30,10 +34,13 @@ window.onload = () => {
             });
             document.querySelector("a-scene").appendChild(entity2);
 
-            // Add a yellow cylinder to the west of the initial GPS position
-            const entity3 = document.createElement("a-cylinder");
-            entity3.setAttribute("height", 20);
-            entity3.setAttribute("radius", 10);
+            // Add a yellow box to the west of the initial GPS position
+            const entity3 = document.createElement("a-box");
+            entity3.setAttribute("scale", {
+                x: 20, 
+                y: 20,
+                z: 20
+            });
             entity3.setAttribute('material', { color: 'yellow' } );
             entity3.setAttribute('gps-new-entity-place', {
                 latitude: e.detail.position.latitude,
@@ -41,11 +48,13 @@ window.onload = () => {
             });
             document.querySelector("a-scene").appendChild(entity3);
 
-            // Add a blue triangle to the east of the initial GPS position
-            const entity4 = document.createElement("a-triangle");
-            entity4.setAttribute("vertex-a", "0 10 0");
-            entity4.setAttribute("vertex-b", "-10 -10 0");
-            entity4.setAttribute("vertex-c", "10 -10 0");
+            // Add a blue box to the east of the initial GPS position
+            const entity4 = document.createElement("a-box");
+            entity4.setAttribute("scale", {
+                x: 20, 
+                y: 20,
+                z: 20
+            });
             entity4.setAttribute('material', { color: 'blue' } );
             entity4.setAttribute('gps-new-entity-place', {
                 latitude: e.detail.position.latitude,
@@ -53,3 +62,6 @@ window.onload = () => {
             });
             document.querySelector("a-scene").appendChild(entity4);
         }
+        testEntityAdded = true;
+    });
+};
