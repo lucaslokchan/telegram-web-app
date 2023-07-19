@@ -31,6 +31,11 @@ window.onload = () => {
             // Add the 3D model to the entity
             const model = document.createElement("a-entity");
             model.setAttribute("gltf-model", "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Duck/glTF/Duck.gltf");
+            model.setAttribute("scale", {
+                x: 20, 
+                y: 20,
+                z: 20
+            });
             south.appendChild(model);
 
             // Add the entity to the scene
