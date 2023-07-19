@@ -29,7 +29,7 @@ window.onload = () => {
             });
 
             // Add the 3D model to the entity
-            const model = document.createElement("a-assets-item");
+            const model = document.createElement("a-entity");
             model.setAttribute("src", "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Duck/glTF/Duck.gltf");
             south.appendChild(model);
 
