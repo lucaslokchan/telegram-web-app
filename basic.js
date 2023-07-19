@@ -20,20 +20,35 @@ window.onload = () => {
                 longitude: e.detail.position.longitude
             });
             document.querySelector("a-scene").appendChild(north);
-
-            // Add a green box to the south of the initial GPS position
-            const south = document.createElement("a-box");
-            south.setAttribute("scale", {
-                x: 20, 
-                y: 20,
-                z: 20
-            });
-            south.setAttribute('material', { color: 'green' } );
-            south.setAttribute('gps-new-entity-place', {
+                
+            // Add a 3D model to the south of the initial GPS position
+            const south = document.createElement("a-entity");
+            south.setAttribute("gps-new-entity-place", {
                 latitude: e.detail.position.latitude - 0.001,
                 longitude: e.detail.position.longitude
             });
+
+            // Add the 3D model to the entity
+            const model = document.createElement("a-assets-item");
+            model.setAttribute("src", "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Duck/glTF/Duck.gltf");
+            south.appendChild(model);
+
+            // Add the entity to the scene
             document.querySelector("a-scene").appendChild(south);
+            
+            // Add a green box to the south of the initial GPS position
+            // const south = document.createElement("a-box");
+            // south.setAttribute("scale", {
+            //     x: 20, 
+            //     y: 20,
+            //     z: 20
+            // });
+            // south.setAttribute('material', { color: 'green' } );
+            // south.setAttribute('gps-new-entity-place', {
+            //     latitude: e.detail.position.latitude - 0.001,
+            //     longitude: e.detail.position.longitude
+            // });
+            // document.querySelector("a-scene").appendChild(south);
 
             // Add a yellow box to the west of the initial GPS position
             const west = document.createElement("a-box");
